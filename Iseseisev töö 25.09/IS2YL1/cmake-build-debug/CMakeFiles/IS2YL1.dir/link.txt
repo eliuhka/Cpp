@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.2.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\IS2YL1.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\IS2YL1.dir/objects.a @CMakeFiles\IS2YL1.dir\objects1.rsp
+C:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\IS2YL1.dir/objects.a -Wl,--no-whole-archive  -o IS2YL1.exe -Wl,--out-implib,libIS2YL1.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\IS2YL1.dir\linklibs.rsp
