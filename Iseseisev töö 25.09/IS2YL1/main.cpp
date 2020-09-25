@@ -14,13 +14,18 @@ int main() {
     }
     cout<< "\nODD Numbers:"<<endl;
     for(i=0;i<n;i++){
-        if(a[i]%2==1)
-            cout<<" " <<a[i]<<++odd;
+        if(a[i]%2==1) {
+            cout << " " << a[i];
+            odd++;
+        }
     }
     cout<< "\nEVEN Numbers:"<<endl;
     for(i=0; i<n; i++){
         if(a[i]%2==0)
-            cout << " " <<a[i]<<++even;
+        {
+            cout << " " << a[i];
+            even++;
+        }
 
     }
     cout<<"\nThere was "<<odd<<" odd numbers and "<<even<<" even numbers"<<endl;
