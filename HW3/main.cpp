@@ -80,23 +80,4 @@ int main(){
     cin >> file_name;
     ifstream file (file_name);
 
-
-    if(file.is_open()){
-        getline(file,line);
-        asukoht(line, linnanimi);
-        temperatuurid(line, temps);
-        printer(linnanimi, temps);
-        cout << "Kui tahad veel andmeid kirjuta y kui ei n!: " << endl;
-        cin >> vastus;
-
-        if (vastus == 'y')
-        {
-            while(getline(file,line))
-            {
-                asukoht(line, linnanimi);
-                temperatuurid(line, temps);
-                printer(linnanimi, temps);
-            }
-        }
-    }
 }
