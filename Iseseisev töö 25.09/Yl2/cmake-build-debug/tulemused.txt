@@ -1,0 +1,12 @@
+Nimi:
+Erki Liuhka
+ 
+Sinu tulemused:
+1
+5
+2
+7
+9
+4
+Parim tulemus: 9
+Teine parim: 7
