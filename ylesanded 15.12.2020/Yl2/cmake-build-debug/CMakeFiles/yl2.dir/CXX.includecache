@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/user/Documents/GitHub/Cpp/ylesanded 15.12.2020/Yl2/main.cpp
+iostream
+-
+string.h
+-
+string
+C:/Users/user/Documents/GitHub/Cpp/ylesanded 15.12.2020/Yl2/string
+fstream
+-
+

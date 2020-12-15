@@ -1,0 +1,3 @@
+C:/Users/user/Documents/GitHub/Cpp/ylesanded 15.12.2020/YL3/cmake-build-debug/CMakeFiles/yl3.dir
+C:/Users/user/Documents/GitHub/Cpp/ylesanded 15.12.2020/YL3/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/user/Documents/GitHub/Cpp/ylesanded 15.12.2020/YL3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
