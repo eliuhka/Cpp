@@ -26,118 +26,75 @@ this->sysivesikuteprotsen = sysivesikud;
     Toiduaine() = default;
 
     virtual double getvalguprotsent() {
-        return valguprotsent;
-    }
-
+        return valguprotsent;}
     virtual double getrasvaprotsent() {
-        return rasvaprotsent;
-    }
-
+        return rasvaprotsent;}
     virtual double getsysivesikuteprotsen() {
-        return sysivesikuteprotsen;
-    }
-
+        return sysivesikuteprotsen;}
     string getNimetus() {
-        return nimi;
-    }
+        return nimi;}
 };
 
 class komponent :
-        public Toiduaine {
+public Toiduaine {
 private:
-    Toiduaine pt;
-    double kogus{};
+Toiduaine pt;
+double kogus{};
 public:
-    komponent() = default;
+komponent() = default;
 
     explicit komponent(Toiduaine x) {
-        this->pt = move(x);
-    }
-
+        this->pt = move(x);}
     komponent(Toiduaine x, float y) {
         this->pt = move(x);
-        this->kogus = y;
-    }
-
+        this->kogus = y;}
     Toiduaine getToiduaine() {
-        return pt;
-    }
-
+        return pt;}
     double getvalguprotsent() override {
-        return kogus * pt.getvalguprotsent() / 100;
-    }
-
+        return kogus * pt.getvalguprotsent() / 100;}
     double getrasvaprotsent() override {
-        return kogus * pt.getrasvaprotsent() / 100;
-    }
-
+        return kogus * pt.getrasvaprotsent() / 100;}
     double getsysivesikuteprotsen() override {
-        return kogus * pt.getsysivesikuteprotsen() / 100;
-    }
-
+        return kogus * pt.getsysivesikuteprotsen() / 100;}
     double getKogus() const {
-        return kogus;
-    }
-
+        return kogus;}
 };
 
 class portsion : public komponent {
 private:
-    vector<komponent> komponentideList;
+vector<komponent> komponentideList;
 public:
-
-    portsion() = default;
+portsion() = default;
 
     explicit portsion(std::vector<komponent> listOfTK) {
-        this->komponentideList = move(listOfTK);
-    }
-
+        this->komponentideList = move(listOfTK);}
     double getkogumass() {
         float kogumass = 0;
         for (const komponent &a : komponentideList) {
-            kogumass = kogumass + a.getKogus();
-        }
-        return kogumass;
-    }
-
+        kogumass = kogumass + a.getKogus();}
+        return kogumass;}
     double getKoguValguMass() {
         float valguMass = 0;
         for (komponent a : komponentideList) {
-            valguMass = valguMass + a.getvalguprotsent();
-        }
-        return valguMass;
-    }
-
+        valguMass = valguMass + a.getvalguprotsent();}
+        return valguMass;}
     double getKoguRasvaMass() {
         float rasvaMass = 0;
         for (komponent a : komponentideList) {
-            rasvaMass = rasvaMass + a.getrasvaprotsent();
-        }
-        return rasvaMass;
-    }
-
+        rasvaMass = rasvaMass + a.getrasvaprotsent();}
+        return rasvaMass;}
     double getKogusysivesikuteMass() {
         float KogusysivesikuteMass = 0;
         for (komponent a : komponentideList) {
-            KogusysivesikuteMass = KogusysivesikuteMass + a.getsysivesikuteprotsen();
-        }
-        return KogusysivesikuteMass;
-    }
-
-
+        KogusysivesikuteMass = KogusysivesikuteMass + a.getsysivesikuteprotsen();}
+        return KogusysivesikuteMass;}
     float komponentidekogu(float PortsioniMass, Toiduaine ta) {
         float selleKomponendiMass = 0;
         for (komponent a : komponentideList) {
-            if (ta.getNimetus() == a.getToiduaine().getNimetus()) {
-                selleKomponendiMass = a.getKogus();
-            }
-        }
+        if (ta.getNimetus() == a.getToiduaine().getNimetus()) {
+        selleKomponendiMass = a.getKogus();}}
         float komponendisialdsusellesaine = selleKomponendiMass / getkogumass();
-
-        return PortsioniMass * komponendisialdsusellesaine;
-    }
-
-};
+        return PortsioniMass * komponendisialdsusellesaine;}};
 
 int main() {
     float porstsioni_suurus;
@@ -153,7 +110,6 @@ int main() {
     cout << "Valke on " << koikKartul.getvalguprotsent() << "g" << endl;
     cout << "Rasvu on " << koikKartul.getrasvaprotsent() << "g " << endl;
     cout << "Sysivesikuid on : " << koikKartul.getsysivesikuteprotsen() << "g " << endl;
-
     cout << "  " << endl;
 
     cout << "jogurti kogumass on: " << koikJogurt.getKogus() << " grammi" << endl;
@@ -171,7 +127,6 @@ int main() {
     vector<komponent> list = {koikKartul, koikJogurt, koik6un};
 
     portsion z(list);
-
     cout << "Portsiooni mass on: " << z.getkogumass() << " grammi" << endl;
     cout << "Portsiooni valgu sisaldus on: " << z.getKoguValguMass() << " grammi" << endl;
     cout << "Portsiooni rasva sisaldus on: " << z.getKoguRasvaMass() << " grammi" << endl;
@@ -181,7 +136,5 @@ int main() {
     cout << porstsioni_suurus << " grammise portsiooni jaoks on vaja " << z.komponentidekogu(porstsioni_suurus, jogurt) << " grammi " << jogurt.getNimetus() << "it "
     << z.komponentidekogu(porstsioni_suurus, kartul) << " grammi " << kartul.getNimetus() << "eid "
     << z.komponentidekogu(porstsioni_suurus, oun) << " grammi " << oun.getNimetus() << "u" << endl;
-
-
     return 0;
 }
